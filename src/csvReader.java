@@ -5,32 +5,34 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class csvReader {
-    //This code reads values in text file (comma separated files)
+    /**
+     * Accesses the text file assosiated with the subject name that the user inputs
+     * Prints out the values from .txt file on to the console
+     *
+     */
 
     public csvReader() {
         System.out.println("Which class would you like to view?");
         Scanner requestedSubject = new Scanner(System.in);
-        String subjectRequestread = requestedSubject.nextLine();
+        String subjectRequester = requestedSubject.nextLine();
 
-
-        String pathread = "C:\\Users\\Matt Toppi\\OneDrive - Florida Gulf Coast University\\School\\Programming\\JAVA (COP2006)\\gradebook_java_class\\"+ subjectRequestread +".txt";
+        //sets a string the the file path which is later easily called
+        String pathread = "C:\\Users\\Matt Toppi\\OneDrive - Florida Gulf Coast University\\School\\Programming\\JAVA (COP2006)\\gradebook_java_class\\"+ subjectRequester +".txt";
         String line = "";
         System.out.println(pathread);
 
+        //fetching mechanism for needed .txt
         {
-            line = "";
             try {
                 BufferedReader br = new BufferedReader(new FileReader(pathread));
 
                 //HOW DO I FORMAT THIS PRINT STATEMENT SO EVERYTHING ALIGNS I AM GETTING AND ERROR
                 System.out.println("Assignment:           Score:");
-                while (((line = br.readLine()) != null)) {
-                    String[] assignmentInfo = line.split(",");
-                    System.out.print(assignmentInfo[1] + " " +  assignmentInfo[2] + " " +  assignmentInfo[3]);
+                while (((line = br.readLine()) != null)) { //while line in .txt has characters
+                    String[] assignmentInfo = line.split(","); //put the columns into an array
+                    System.out.print(assignmentInfo[1] + " " +  assignmentInfo[2] + " " +  assignmentInfo[3]); //print arrays
                 }
 
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }

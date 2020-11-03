@@ -7,6 +7,13 @@ import java.util.Scanner;
 
 public class test {
 
+    /**
+     * a test file for later use
+     *
+     * IGNORE THIS FILE FOR NOW
+     *
+     * @throws IOException
+     */
     public test() throws IOException {
         // hash map with arraylist as my value containing grade and grade weight
         // [key as the name of the assignment] [grade] [grade weight as an integer]

@@ -10,6 +10,7 @@ public class getPassword {
             Scanner userPassword = new Scanner(System.in);
             String firstPassword = userPassword.nextLine();
 
+            //prompts user to re-enter the password to clarify there was no typo's
             System.out.print("Please re-enter the password (case sensitive): ");
             Scanner userPassword2 = new Scanner(System.in);
             String secondPassword = userPassword2.nextLine();

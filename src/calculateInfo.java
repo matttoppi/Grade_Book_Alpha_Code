@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class calculateInfo {
+    /**
+     * calculates the weights and averages of the grades
+     *
+     */
 
     public calculateInfo(){
 

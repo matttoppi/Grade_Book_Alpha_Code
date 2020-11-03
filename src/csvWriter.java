@@ -7,6 +7,13 @@ import java.util.Scanner;
 //NEED TO ADD USER INPUT FOR THE NAME OF THE ASSIGNMENT AND THE ASSOCIATED GRADE
 
 public class csvWriter {
+    /**
+     * opens .txt file user asks for and allows user to add assignments to it
+     * user can select which type of assignment they are adding
+     *
+     * @throws IOException
+     * @throws InterruptedException
+     */
 
     public csvWriter() throws IOException, InterruptedException {
 
@@ -24,7 +31,7 @@ public class csvWriter {
             Scanner typeOfAssignment = new Scanner(System.in);
             String assignmentType = typeOfAssignment.nextLine();
 
-            //gets assingment type
+            //gets assignment name
             System.out.print("Assignment Name: ");
             Scanner nameOfNewAssignment = new Scanner(System.in);
             String assignmentName = nameOfNewAssignment.nextLine();
@@ -37,6 +44,8 @@ public class csvWriter {
             String pathwrite = "C:\\Users\\Matt Toppi\\OneDrive - Florida Gulf Coast University\\School\\Programming\\JAVA (COP2006)\\gradebook_java_class\\" + subjectRequestWrite + ".txt";
             BufferedWriter out = null;
             try {
+                //where files get output
+                //sets the format of the lines so that they can be accessed similarly in the other methods
                 FileWriter write = new FileWriter(pathwrite, true);
                 out = new BufferedWriter(write);
                 out.write(" " + "," + assignmentName + "," + assignmentGrade + "," + assignmentType +"\n");
@@ -47,6 +56,7 @@ public class csvWriter {
                 if (out != null)
                     out.close();
 
+                //allows user to stay in the "add grade" menu until they wish to return the the main menu
                 System.out.println("Would you like to enter another grade?");
                 Scanner addMoreGrades = new Scanner(System.in);
                 String moreGrades = addMoreGrades.nextLine();
@@ -56,6 +66,6 @@ public class csvWriter {
                 }
             }
         }
-        new mainMenuUI();
+        new mainMenuUI(); // calls the main menu user UI
     }
 }
